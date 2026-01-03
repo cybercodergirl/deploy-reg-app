@@ -16,17 +16,17 @@ services:
       # - SECRET_KEY=${{ secrets.SECRET_KEY }}
       - SECRET_KEY=${SECRET_KEY}
       # Optional DB configuration (unused by current in-memory backend)
-      # - DATABASE_URL=postgresql://postgres:postgres@db:5432/magax
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/magax
 
 # Optional Postgres (uncomment to use, and enable DB usage in the app)
-#  db:
-#    image: postgres:13
-#    environment:
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_PASSWORD=postgres
-#      - POSTGRES_DB=magax
-#    volumes:
-#      - postgres_data:/var/lib/postgresql/data
+  db:
+    image: postgres:13
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_DB=magax
+    volumes:
+     - postgres_data:/var/lib/postgresql/data
 
-#volumes:
-#  postgres_data:
+volumes:
+ postgres_data:
