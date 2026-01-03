@@ -13,8 +13,8 @@ services:
     ports:
       - "9091:8000"
     environment:
-      - SECRET_KEY=${{ secrets.SECRET_KEY }}
-      # - SECRET_KEY=${SECRET_KEY}
+      # - SECRET_KEY=${{ secrets.SECRET_KEY }}
+      - SECRET_KEY=${SECRET_KEY}
       # Optional DB configuration (unused by current in-memory backend)
       # - DATABASE_URL=postgresql://postgres:postgres@db:5432/magax
 
