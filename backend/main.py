@@ -14,7 +14,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Initialize FastAPI app
-app = FastAPI(title="Backend API")
+app = FastAPI(
+    title="Backend API",
+    docs_url="/api/docs",        # Swagger UI
+    redoc_url="/api/redoc",      # ReDoc UI
+)
 
 # Create an API router with prefix /api
 api_router = APIRouter(prefix="/api")
